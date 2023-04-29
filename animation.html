@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>documet</title>
+	<style type="text/css">
+		#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  perspective: 500px;
+  background: black;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: all 2s ease-in-out;
+  background: red;
+}
+
+.box:hover {
+  transform: translate(-50%, -50%) rotateX(180deg) rotateY(180deg);
+}
+
+	</style>
+</head>
+<body>
+<div id="container">
+  <div class="box">Suresh rokaya</div>
+</div>
+	<script type="text/javascript">
+		const box = document.querySelector('.box');
+let rotation = 0;
+
+setInterval(() => {
+  rotation += 10;
+  box.style.transform = `translate(-50%, -50%) rotateX(${rotation}deg) rotateY(${rotation}deg)`;
+}, 100);
+
+	</script>
+</body>
+</html>
